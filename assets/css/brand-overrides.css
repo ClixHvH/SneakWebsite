@@ -1,0 +1,378 @@
+/* Final brand consolidation overrides — maps legacy selectors to CSS variables
+   This file should be loaded last so it overrides hard-coded colors in vendor/main CSS.
+*/
+
+/* Global design tokens for overrides (safe to add here) */
+
+:root {
+    --radius: 12px;
+    /* global border radius for rounded everywhere */
+    /* Darker theme tuning for readability */
+    --bg: #0b1117;
+    /* deeper blue-gray */
+    --surface: #111827;
+    /* card/section surface */
+    --border: #1f2a37;
+    /* subtle borders */
+    --text: #e8f0ff;
+    /* slightly cooler, brighter text */
+    --muted: #a7b0bb;
+    /* higher-contrast muted */
+    --noise-opacity: 0.04;
+    /* dial down background noise */
+    --success: #22c55e;
+    /* green for trust badge */
+}
+
+/* Give pricing section extra padding-top for product preview images */
+
+.pricing-table {
+    padding-top: 100px !important;
+}
+
+/* Apply generous rounding to common UI elements for a cohesive look */
+
+button,
+.btn,
+.product-card,
+.single-feature,
+.navbar,
+.navbar-brand img,
+.section,
+.section-title,
+.accordion-button,
+.pricing-table .single-table,
+.preloader-icon span {
+    border-radius: var(--radius) !important;
+}
+
+/* Make images slightly rounded unless explicitly square */
+
+img {
+    border-radius: calc(var(--radius) - 4px);
+}
+
+/* Ensure all sections use darker background */
+
+.section {
+    background-color: var(--bg) !important;
+}
+
+/* Primary brand uses */
+
+.section-title h3,
+.scroll-top,
+.pagination .pagination-list li.active a,
+.button .btn,
+.preloader-icon span,
+.hero-area,
+.features .single-feature i,
+.our-achievement,
+.testimonials .tns-nav button.tns-nav-active,
+.pricing-table .single-table .table-head .button .btn:hover,
+.navbar-area .button .btn:hover,
+.header.sticky .button .btn,
+.accordion-button:not(.collapsed),
+.popular-tag-widget .tags>a,
+.sidebar .widget.search-widget form button,
+.client-logo-section .client-logo-wrapper .client-logo img:hover,
+.call-action,
+.contact-form-head::before,
+.faq .accordion-button:not(.collapsed),
+.footer .footer-newsletter .newsletter-form .button .btn {
+    background: linear-gradient(135deg, var(--brand), var(--dark)) !important;
+    background-color: var(--brand) !important;
+    color: #fff !important;
+}
+
+/* Darken hero background with an overlay on top of brand gradient */
+
+.hero-area {
+    background-image: linear-gradient( to bottom right, rgba(5, 12, 18, 0.86), rgba(5, 12, 18, 0.62)), linear-gradient(135deg, var(--brand-2), var(--brand)) !important;
+}
+
+/* Secondary / darker accents */
+
+.button .btn:hover,
+.header.sticky .button .btn:hover,
+.pricing-table .single-table .table-head .button .btn:active,
+.footer .footer-newsletter .newsletter-form .button .btn:hover {
+    background-color: var(--dark) !important;
+}
+
+/* Text color accents */
+
+a,
+a:visited,
+.accent,
+.section-title h3,
+.blog-section .single-blog .blog-content .category,
+.team .single-team .text h5,
+.footer .single-footer.f-about .social li a:hover,
+.footer .single-footer.f-link li a:hover,
+.post-details .post-social-media ul li a:hover,
+.blog-single .meta-info li a:hover,
+.post-comments .comments-list li .comment-desc .desc-top .reply-link:hover,
+.sidebar .widget.popular-feeds .single-popular-feed .feed-desc .cetagory:hover,
+.blockquote .icon i,
+.maill-success .success-content i,
+.error-area .error-content h1,
+.post-details .post-social-media ul li a span::before {
+    color: var(--brand) !important;
+}
+
+/* Borders and small decorative accents */
+
+.pricing-table .single-table,
+.features .single-feature,
+.header .navbar-collapse,
+.accordion-item .accordion-button,
+.blog-section .single-blog,
+.post-comments .comments-list li {
+    border-color: rgba(0, 143, 191, 0.12) !important;
+}
+
+/* Specific element overrides that used hard-coded brand colors */
+
+.pricing-table .single-table .table-head .button .btn:hover {
+    color: #fff !important;
+}
+
+.pricing-table .single-table .table-content .table-list li i,
+blockquote .icon i,
+.post-details .post-social-media ul li a span::before,
+.header .navbar-nav .nav-item .sub-menu .nav-item a:hover,
+.blog-single .meta-info li a:hover {
+    color: var(--brand) !important;
+}
+
+/* Other background-color overrides */
+
+.call-action {
+    background-color: var(--brand) !important;
+}
+
+.contact-form-head::before {
+    background-color: var(--brand) !important;
+}
+
+/* Buttons using the glow style */
+
+.btn.glow {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
+    box-shadow: 0 12px 60px rgba(0, 143, 191, 0.16) !important;
+}
+
+/* Make sure small text accents inherit the variable */
+
+.color-brand {
+    color: var(--brand) !important;
+}
+
+/* Fallback for any remaining exact color tokens used as borders or fills */
+
+[style*="#007ab0"],
+[style*="#006f9a"],
+[style*="#008fbf"] {
+    color: var(--brand) !important;
+}
+
+/* Accessibility and contrast fixes */
+
+/* Navigation / tab links should be readable against dark background */
+
+.navbar-area .navbar-nav .nav-link,
+.navbar-area .navbar-nav a,
+.navbar-area .navbar-nav .page-scroll,
+.navbar-area .navbar-nav .nav-item>a {
+    color: var(--text) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+    transition: color .18s ease, text-shadow .18s ease;
+}
+
+.navbar-area .navbar-nav .nav-link:hover,
+.navbar-area .navbar-nav a:hover,
+.navbar-area .navbar-nav .page-scroll:hover {
+    color: #ffffff !important;
+    text-shadow: 0 6px 26px rgba(0, 143, 191, 0.14) !important;
+}
+
+/* Section headers / titles should contrast with sliding bars and overlays */
+
+.section-title h1,
+.section-title h2,
+.section-title h3,
+.section-title h4 {
+    color: var(--text) !important;
+    text-shadow: 0 2px 20px rgba(0, 143, 191, 0.04) !important;
+}
+
+/* Product card: ensure features list inherits card background (transparent) and is readable */
+
+.product-card .features {
+    background: transparent !important;
+    padding: 0 !important;
+    margin-top: 12px !important;
+}
+
+.product-card .features li {
+    color: rgba(233, 233, 233, 0.92) !important;
+    /* strong readable text */
+}
+
+.product-card .features li i {
+    color: var(--brand) !important;
+}
+
+/* Small helpers for sliding panels / offcanvas headers */
+
+.offcanvas,
+.slide-out,
+.sidebar-panel {
+    color: var(--text) !important;
+}
+
+/* Visual emphasis for tab-like controls if they were using subtle blues that blend into bg */
+
+.nav-tabs .nav-link,
+.nav-pills .nav-link {
+    color: var(--muted) !important;
+}
+
+.nav-tabs .nav-link.active,
+.nav-pills .nav-link.active {
+    color: var(--text) !important;
+    background: linear-gradient(90deg, rgba(0, 143, 191, 0.06), rgba(0, 114, 166, 0.06)) !important;
+    box-shadow: 0 6px 30px rgba(0, 143, 191, 0.06) !important;
+}
+
+/* Noise layer should be subtle and not compete with content */
+
+.noise {
+    mix-blend-mode: soft-light !important;
+    opacity: var(--noise-opacity) !important;
+    z-index: 0 !important;
+}
+
+/* Navbar readability on dark backgrounds */
+
+.navbar-area {
+    background: linear-gradient(to bottom, rgba(11, 17, 23, 0.85), rgba(11, 17, 23, 0.60)) !important;
+    backdrop-filter: blur(6px);
+}
+
+/* Ensure hero content and badge are centered */
+
+.hero-area .hero-content {
+    text-align: center !important;
+}
+
+.hero-area .hero-content h1 {
+    text-align: center !important;
+}
+
+.hero-area .hero-badge {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features cards: ensure cool dark surfaces (avoid warm/brown tones) */
+
+.features {
+    background: var(--bg) !important;
+}
+
+.features .single-feature {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), var(--surface) !important;
+    border-color: var(--border) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.20) !important;
+}
+
+.features .single-feature:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28) !important;
+}
+
+.features .single-feature i {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
+}
+
+/* FAQ: neutralize brand gradient in expanded state and set high-contrast colors */
+
+.faq .accordion-item {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: var(--radius) !important;
+    margin-bottom: 12px !important;
+    overflow: hidden;
+}
+
+.faq .accordion-button {
+    background: transparent !important;
+    color: var(--text) !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+    padding: 18px 20px !important;
+}
+
+.faq .accordion-button:not(.collapsed) {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)) !important;
+    color: var(--text) !important;
+    box-shadow: none !important;
+}
+
+.faq .accordion-button .title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq .accordion-button .serial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.faq .accordion-button .lni {
+    color: var(--brand) !important;
+}
+
+.faq .accordion-body {
+    background: transparent !important;
+    color: var(--muted) !important;
+    padding: 0 20px 18px 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+.faq .accordion-item+.accordion-item {
+    border-top: none !important;
+}
+
+/* Footer: unify with dark theme */
+
+.footer {
+    background: var(--bg) !important;
+    color: var(--muted) !important;
+    border-top: 1px solid var(--border) !important;
+}
+
+.footer a {
+    color: var(--text) !important;
+    opacity: 0.9;
+}
+
+.footer a:hover {
+    opacity: 1;
+}
+
+/* End of brand overrides */

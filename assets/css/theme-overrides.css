@@ -1,0 +1,112 @@
+/* Theme overrides to gradually replace legacy hard-coded brand colors without editing vendor rules.
+   Uses CSS variables defined in main.css :root.
+*/
+
+/* Form check */
+
+.form-check-input:checked {
+    background-color: var(--brand);
+    border-color: var(--brand);
+}
+
+.breadcrumbs {
+    background-color: var(--brand);
+}
+
+.section-title h3 {
+    color: var(--brand);
+}
+
+.scroll-top {
+    background: linear-gradient(135deg, var(--brand), var(--dark));
+}
+
+.button .btn {
+    background-color: var(--brand);
+}
+
+.button .btn:hover {
+    background-color: var(--dark);
+}
+
+.preloader-icon span {
+    background: linear-gradient(135deg, var(--brand), var(--dark));
+}
+
+.hero-area {
+    background-image: linear-gradient(var(--brand-2), var(--brand));
+}
+
+.features .single-feature i {
+    background-color: var(--brand);
+}
+
+.our-achievement {
+    background-color: var(--brand);
+}
+
+.pagination .pagination-list li.active a,
+.pagination .pagination-list li:hover a {
+    background: linear-gradient(135deg, var(--brand), var(--dark));
+}
+
+.header .button .btn:hover {
+    color: var(--brand);
+}
+
+.header.sticky .button .btn {
+    background-color: var(--brand);
+}
+
+.header.sticky p {
+    color: var(--dark);
+}
+
+.navbar-nav .nav-item .sub-menu .nav-item a:hover {
+    color: var(--brand);
+}
+
+.testimonials .tns-nav button.tns-nav-active {
+    background: linear-gradient(135deg, var(--brand), var(--dark));
+}
+
+.pricing-table .single-table .table-head .button .btn:hover {
+    background-color: var(--brand);
+}
+
+/* Make accent utility available */
+
+.accent {
+    color: var(--brand);
+}
+
+/* Button glow helper — prefer using .btn.glow where possible */
+
+.btn.glow {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+}
+
+/* Slightly increase visibility for important links */
+
+a,
+a:visited {
+    color: var(--text);
+}
+
+/* subtle site background */
+
+body {
+    background-color: var(--bg);
+    color: var(--muted);
+}
+
+/* make headings readable */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text);
+}
