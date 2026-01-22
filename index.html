@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.ico" type="image/gif" />
+    <title>SneaK Solutions®</title>
+    <meta name="description" content="Premium software engineered for peak performance. Dominate the competition with cutting-edge technology." />
+    <meta name="author" content="SneaK Solutions®" />
+    <meta property="og:title" content="SneaK Solutions®" />
+    <meta property="og:description" content="Premium software engineered for peak performance. Dominate the competition with cutting-edge technology." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.gif" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="assets/index-B49yPpJZ.js"></script>
+    <link rel="stylesheet" href="assets/index-oaiP4pdK.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Forçar a visibilidade após 3 segundos caso o React falhe ou fique preso no loading
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root && root.innerHTML === '') {
+          console.warn('React falhou ao carregar. Tentando forçar renderização básica...');
+        }
+        document.body.style.opacity = '1';
+        document.body.style.visibility = 'visible';
+        const mainDiv = document.querySelector('.opacity-0');
+        if (mainDiv) {
+          mainDiv.style.opacity = '1';
+          mainDiv.style.setProperty('opacity', '1', 'important');
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>
