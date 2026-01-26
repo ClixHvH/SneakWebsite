@@ -25195,6 +25195,7 @@ const eM = "/assets/logo.ico",
               }, 1e3));
           }, 3e3));
     };
+    x.useEffect(() => { if (window.togglePartyMusic) window.togglePartyMusic(t); }, [t]);
     return d.jsx(T2.Provider, {
       value: {
         isRaveMode: t,
